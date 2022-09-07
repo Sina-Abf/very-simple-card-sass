@@ -1,0 +1,83 @@
+@import '../Sass/variables';
+@import '../Sass/mixins';
+
+.card {
+  background: $white;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+}
+
+.card-image {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.card-text-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include smMinBreakPoint {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.card-pricing {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-pricing-original {
+  color: $darkCyan;
+  font-family: 'Fraunces', serif;
+  font-size: 2.5rem;
+}
+
+.card-pricing-discount {
+  text-decoration: line-through;
+  color: $darkGrayishBlue;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.7rem;
+  border-radius: 10px;
+  width: 100%;
+  background: $darkCyan;
+  color: $white;
+  font-weight: bold;
+  font-size: 16px;
+
+  &:hover {
+    background: $veryDarkBlue;
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+@include smMinBreakPoint {
+  .card {
+    flex-direction: row;
+    height: 50%;
+  }
+
+  .card-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  button {
+    width: 80%;
+  }
+}
